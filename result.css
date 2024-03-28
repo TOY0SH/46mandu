@@ -1,0 +1,99 @@
+/*  result_ani 로 바꾸기ㅋ */
+
+.result_wait {
+     background-image: url("resource/result_jyj_1.png");
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+.result_com {
+     background-image: url("resource/result_jyj_2.png");
+     background-color: #000;
+}
+
+/* 시크릿 엔딩 1 */
+
+.secret_1 {
+     background-image: url("resource/result_secret_1_jyj.png");
+     animation: ani_3_frame 1s steps(3) infinite;
+}
+
+.secret_1_aura {
+     background-image: url("resource/result_secret_1_aura.png");
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+/* 시크릿 엔딩 2*/
+.secret_2 {
+     background-image: url("resource/result_secret_2_jyj.png");
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+/* 굿 엔딩 */
+.good_aura {
+     background-image: url("resource/result_good_aura.png");
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+.good {
+     background-image: url("resource/result_good.png");
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+/* 배드 엔딩  */
+.bad1 {
+     background-image: url("resource/result_bad_jyj.png");
+     background-position: 480px;
+     animation: ani_2_frame 1s steps(2) infinite;
+}
+
+.bad_talk {
+     background-image: url("resource/result_bad_jyj_talk.png");
+     background-position: 480px;
+}
+
+.bad2 {
+     background-image: url("resource/bad_result_bg.png");
+}
+
+.bad_aura {
+     background-image: url("resource/bad_result_aura.png");
+     animation: move_aura 1s infinite;
+}
+
+.jyj_ksh {
+     background-image: url("resource/bad_result_ps.png");
+}
+
+@keyframes ani_2_frame {
+     from {
+          background-position: 0px;
+     }
+
+     to {
+          background-position: 960px;
+     }
+}
+
+@keyframes ani_3_frame {
+     from {
+          background-position: 0px;
+     }
+
+     to {
+          background-position: -1440px;
+     }
+}
+
+@keyframes move_aura {
+     0% {
+          bottom: 240px;
+     }
+
+     50% {
+          bottom: 220px;
+     }
+
+     100% {
+          bottom: 240px;
+     }
+}

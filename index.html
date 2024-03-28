@@ -1,0 +1,278 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>만두 만들기 게임</title>
+     <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="title.css" />
+     <link rel="stylesheet" href="play.css" />
+     <link rel="stylesheet" href="result.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gasoek+One&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+     <div class="content">
+          <div id="notice" class="notice">
+               <strong>웹툰 가비지타임의<br>비공식 팬게임입니다.</strong>
+               <p>CP(영중상호)요소 약 포함</p>
+               <button onclick="OnTitle()">확인완료</button>
+          </div>
+          <div class="game">
+               <!-- <audio src="resource/bgm.mp3" autoplay loop="true"></audio> -->
+               <div class="loading">
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+                    <div class="droplet"></div>
+               </div>
+               <!-- 타이틀 -->
+               <div class="game_title">
+                    <div class="bg"></div>
+                    <div class="title_img">
+                         <div class="title_ksh"></div>
+                         <div class="title_ksh_think">
+                              <strong id="title_ksh_think_strong">흠......</strong>
+                              <p id="title_ksh_think_p">뭔가<br>이벤트를<br>하고 싶은데<br>뭘 하지?</p>
+                         </div>
+                         <div class="title_text">
+                              <strong>[진심모드100%]</strong>
+                              <span>달.미.폭 기상호</span>
+                              <p>진정한 만두의 맛을<br>보여드리지요...</p>
+                         </div>
+                    </div>
+                    <div class="how_play"></div>
+                    <div class="title_btns">
+                         <div class="logo"></div>
+                         <button class="start_btn" onclick="OnPlay()">게임시작</button>
+                    </div>
+               </div>
+
+               <!-- 실제 게임 -->
+               <div class="game_play">
+
+                    <!-- 속재료 -->
+                    <div class="play_filling">
+                         <div class="filling_img">
+                              <div class="filling_dish"></div>
+                              <div class="img_filling" id="cabbage"></div>
+                              <div class="img_filling" id="dubu"></div>
+                              <div class="img_filling" id="ace"></div>
+                              <div class="img_filling" id="egg"></div>
+                              <div class="img_filling" id="cheese"></div>
+                              <div class="img_filling" id="meat"></div>
+                              <div class="img_filling" id="onion"></div>
+                              <div class="img_filling" id="gochujang"></div>
+                              <div class="img_filling" id="chamgileum"></div>
+                              <div class="img_filling" id="pepper"></div>
+                              <div class="img_filling" id="ketchup"></div>
+                              <div class="img_filling" id="garlic"></div>
+                              <div class="img_filling" id="daepa"></div>
+                              <div class="img_filling" id="mayonnaise"></div>
+                         </div>
+                         <div class="play_btn">
+                              <button class="filling_prev"></button>
+                              <button class="filling_next" onclick="OnSkin()">►</button>
+                         </div>
+                         <div class="filling_btns">
+                              <input type="checkbox" name="filling" id="filling_meat" value="0"
+                                   onclick="checkFilling('filling_meat','meat')">
+                              <label for="filling_meat">고기</label></button>
+                              <input type="checkbox" name="filling" id="filling_dubu" value="1"
+                                   onclick="checkFilling('filling_dubu','dubu')">
+                              <label for="filling_dubu">두부</label></button>
+                              <input type="checkbox" name="filling" id="filling_onion" value="2"
+                                   onclick="checkFilling('filling_onion','onion')">
+                              <label for="filling_onion">양파</label></button>
+                              <input type="checkbox" name="filling" id="filling_cabbage" value="3"
+                                   onclick="checkFilling('filling_cabbage','cabbage')">
+                              <label for="filling_cabbage">양배추</label></button>
+                              <input type="checkbox" name="filling" id="filling_egg" value="4"
+                                   onclick="checkFilling('filling_egg','egg')">
+                              <label for="filling_egg">계란</label></button>
+                              <input type="checkbox" name="filling" id="filling_chamgileum" value="5"
+                                   onclick="checkFilling('filling_chamgileum','chamgileum')">
+                              <label for="filling_chamgileum">참기름</label></button>
+                              <input type="checkbox" name="filling" id="filling_ace" value="6"
+                                   onclick="checkFilling('filling_ace','ace')">
+                              <label for="filling_ace">Ece</label></button>
+                              <input type="checkbox" name="filling" id="filling_pepper" value="7"
+                                   onclick="checkFilling('filling_pepper','pepper')">
+                              <label for="filling_pepper">고추</label></button>
+                              <input type="checkbox" name="filling" id="filling_garlic" value="8"
+                                   onclick="checkFilling('filling_garlic','garlic')">
+                              <label for="filling_garlic">마늘</label></button>
+                              <input type="checkbox" name="filling" id="filling_cheese" value="9"
+                                   onclick="checkFilling('filling_cheese','cheese')">
+                              <label for="filling_cheese">치즈</label></button>
+                              <input type="checkbox" name="filling" id="filling_daepa" value="10"
+                                   onclick="checkFilling('filling_daepa','daepa')">
+                              <label for="filling_daepa">대파</label></button>
+                              <input type="checkbox" name="filling" id="filling_gochujang" value="11"
+                                   onclick="checkFilling('filling_gochujang','gochujang')">
+                              <label for="filling_gochujang">고추장</label></button>
+                              <input type="checkbox" name="filling" id="filling_mayonnaise" value="12"
+                                   onclick="checkFilling('filling_mayonnaise','mayonnaise')">
+                              <label for="filling_mayonnaise">마요네즈</label></button>
+                              <input type="checkbox" name="filling" id="filling_ketchup" value="13"
+                                   onclick="checkFilling('filling_ketchup','ketchup')">
+                              <label for="filling_ketchup">케첩</label></button>
+                         </div>
+                    </div>
+
+                    <!-- 만두피 -->
+                    <div class="play_skin">
+                         <div class="skin_img">
+                              <div class="skin_dish"></div>
+                              <div class="img_skin" id="img_flour"></div>
+                              <div class="img_skin" id="img_water"></div>
+                         </div>
+                         <div class="play_btn">
+                              <button id="skin_prev" onclick="OnFilling()">◄</button>
+                              <button id="skin_next" onclick="OnShape()">►</button>
+                         </div>
+                         <div class="skin_btns">
+                              <div class="flour">
+                                   <input type="radio" name="flour" id="skin_rice" value="0"
+                                        onclick="checkSkin('skin_rice', 'img_flour', 0)">
+                                   <label for="skin_rice">쌀가루</label></button>
+                                   <input type="radio" name="flour" id="skin_flour" value="1"
+                                        onclick="checkSkin('skin_flour', 'img_flour', 0)">
+                                   <label for="skin_flour">밀가루</label></button>
+                                   <input type="radio" name="flour" id="skin_protein" value="2"
+                                        onclick="checkSkin('skin_protein', 'img_flour', 0)">
+                                   <label for="skin_protein">프로틴</label></button>
+                              </div>
+                              <div class="water">
+                                   <input type="radio" name="water" id="skin_water" value="0"
+                                        onclick="checkSkin('skin_water', 'img_water', 1)">
+                                   <label for="skin_water">물</label></button>
+                                   <input type="radio" name="water" id="skin_juice" value="1"
+                                        onclick="checkSkin('skin_juice', 'img_water', 1)">
+                                   <label for="skin_juice">커피</label></button>
+                                   <input type="radio" name="water" id="skin_milk" value="2"
+                                        onclick="checkSkin('skin_milk', 'img_water', 1)">
+                                   <label for="skin_milk">우유</label></button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- 모양 -->
+                    <div class="play_shape">
+                         <div class="shape_img">
+                              <div class="shape_dish"></div>
+                              <div class="img_shape" id="img_mandu"></div>
+                         </div>
+                         <div class="play_btn">
+                              <button id="shape_prev" onclick="OnSkin()">◄</button>
+                              <button id="shape_next" onclick="OnCook()">►</button>
+                         </div>
+                         <div class="shape_btns">
+                              <input type="radio" name="shape" id="shape_long" value="0"
+                                   onclick="checkShape('img_mandu', 0)">
+                              <label for="shape_long">긴반달모양</label></button>
+                              <input type="radio" name="shape" id="shape_moon" value="1"
+                                   onclick="checkShape('img_mandu', 1)">
+                              <label for="shape_moon">또아리모양</label></button>
+                              <input type="radio" name="shape" id="shape_otl" value="2"
+                                   onclick="checkShape('img_mandu', 2)">
+                              <label for="shape_otl">쭈그리모양</label></button>
+                         </div>
+                    </div>
+
+                    <!-- 조리방법 -->
+                    <div class="play_cook">
+                         <div class="cook_img">
+                              <div class="img_cook" id="cook_dish"></div>
+                              <div class="img_cook" id="img_cook_mandu"></div>
+                              <div id="cook_aura"></div>
+                         </div>
+                         <div class="play_btn">
+                              <button id="cook_prev" onclick="OnShape()">◄</button>
+                              <button id="cook_next" onclick="OnResult()">►</button>
+                         </div>
+                         <div class="cook_btns">
+                              <input type="radio" name="cook" id="cook_boil" value="0"
+                                   onclick="checkCook('cook_dish', 0)">
+                              <label for="cook_boil">뜨거운 물에 삶기</label></button>
+                              <input type="radio" name="cook" id="cook_roast" value="1"
+                                   onclick="checkCook('cook_dish', 1)">
+                              <label for="cook_roast">후라이팬에 굽기</label></button>
+                              <input type="radio" name="cook" id="cook_steaming" value="2"
+                                   onclick="checkCook('cook_dish', 2)">
+                              <label for="cook_steaming">찜통에 찌기</label></button>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- 게임 결과 -->
+               <div class="game_result">
+                    <div class="result">
+                         <div class="result_img">
+                              <div class="result_wait"></div>
+                              <div class="result_com"></div>
+                              <div class="result_secret">
+                                   <div class="secret_1">
+                                        <div class="secret_1_aura"></div>
+                                        <strong>식단스페셜리스트</strong>
+                                        <p>라고 불러주시길...</p>
+                                        <span id="result_secret_1_think">그래...<br>운동선수면<br>식단해야지...</span>
+                                   </div>
+                                   <div class="secret_2">
+                                        <strong>만두(?)스페셜리스트</strong>
+                                        <p>라고 불러주시길...</p>
+                                        <span id="result_secret_1_think">맛있긴한데...<br>이걸 만두라고 부를 수 있나?</span>
+                                   </div>
+                              </div>
+                              <div class="result_good">
+                                   <div class="good">
+                                        <div class="good_aura"></div>
+                                        <strong>만두스페셜리스트</strong>
+                                        <p>라고 불러주시길...</p>
+                                        <span id="result_good_think">맛있다ㅎㅎ</span>
+                                   </div>
+                              </div>
+                              <div class="result_bad">
+                                   <div class="bad1">
+                                        <div class="bad_talk">
+                                             <p id="result_filling">만두 속이<br>이상하고...</p>
+                                             <p id="result_skin">음...</p>
+                                             <p id="result_cook">조리 방법이<br>좀...</p>
+                                        </div>
+                                   </div>
+                                   <div class="bad2">
+                                        <div class="jyj_ksh"></div>
+                                        <div class="bad_aura"></div>
+                                        <p id="result_mandu">이론은 완벽했는데...!</p>
+                                        <strong id="result_bad_think">형용할 수 없는 맛이 난다...</strong>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="result_btn">
+                              <button id="retry" onclick="OnPlay()">다시도전</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="ad">
+               <a href="https://comic.naver.com/webtoon/list?titleId=703844&page=1&sort=DESC" target="_blank">
+                    <img class="ad_img">
+               </a>
+          </div>
+     </div>
+     <script src="./js/main.js"></script>
+     <script src="./js/animation.js"></script>
+</body>
+
+</html>

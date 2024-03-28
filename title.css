@@ -1,0 +1,18 @@
+.title_img {
+     position: relative;
+}
+
+.title_ksh {
+     background-image: url('resource/title_ksh.png');
+     /* 0 -480 -960 480 */
+}
+
+.title_ksh_think {
+     background-image: url('resource/title_ksh_talk.png');
+     /* 0 480 */
+}
+
+.logo {
+     background-image: url("resource/logo.png");
+     background-size: cover;
+}

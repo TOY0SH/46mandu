@@ -1,0 +1,808 @@
+* {
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: normal;
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     height: 100%;
+     min-width: 480px;
+     background-color: white;
+}
+
+/*  경고 화면  */
+.notice {
+     display: flex;
+     width: 480px;
+     height: 640px;
+     background-color: #fdf4e1;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.notice strong {
+     display: block;
+     width: 300px;
+     text-align: center;
+     color: #464646;
+     font-size: 30px;
+     font-weight: normal;
+     margin-bottom: 10px;
+}
+
+.notice p {
+     display: block;
+     width: 300px;
+     text-align: center;
+     font-size: 15px;
+     font-weight: bold;
+     font-family: 'Noto Sans KR';
+     color: #ce1919;
+     margin-bottom: 20px;
+}
+
+.notice button {
+     cursor: pointer;
+     display: block;
+     padding: 0;
+     line-height: 50px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 10px 20px 10px 0;
+     width: 150px;
+     height: 50px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 25px;
+     text-align: center;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+}
+
+.notice button:hover {
+     background-color: orangered;
+}
+
+
+.game {
+     display: none;
+     width: 480px;
+     height: 640px;
+}
+
+/*  로딩 화면  */
+.loading {
+     display: none;
+     justify-content: center;
+     align-items: center;
+     width: 480px;
+     height: 640px;
+     background-color: #fdf4e1;
+}
+
+.droplet {
+     width: 15px;
+     height: 15px;
+     margin: 0 5px;
+
+     background-color: #e14242;
+     border-radius: 50%;
+     transform-origin: center bottom;
+
+     animation: bounce 1.2s cubic-bezier(0.3, 0.01, 0.4, 1) infinite;
+}
+
+.droplet:nth-child(1) {
+     animation-delay: -0.4s;
+}
+
+.droplet:nth-child(2) {
+     animation-delay: -0.2s;
+}
+
+.droplet:nth-child(3) {
+     animation-delay: 0s;
+}
+
+@keyframes bounce {
+
+     0%,
+     100% {
+          transform: translateY(0);
+     }
+
+     50% {
+          transform: translateY(-20px);
+     }
+}
+
+/*  타이틀 화면  */
+.game_title {
+     display: none;
+     position: relative;
+     width: 100%;
+     height: 100%;
+     background-color: #B475D0;
+     background-image: url('resource/bg.png');
+}
+
+.bg {
+     width: 100%;
+     height: 100%;
+}
+
+.title_img {
+     position: relative;
+}
+
+.title_ksh {
+     width: 480px;
+     height: 640px;
+}
+
+.title_ksh_think {
+     display: flex;
+     position: absolute;
+     top: 0;
+     width: 480px;
+     height: 640px;
+}
+
+.title_ksh_think strong {
+     display: block;
+     width: 120px;
+     height: 120px;
+     text-align: center;
+     line-height: 120px;
+     position: absolute;
+     right: 55px;
+     top: 60px;
+     font-size: 26px;
+}
+
+.title_ksh_think p {
+     display: none;
+     width: 150px;
+     height: 120px;
+     text-align: center;
+     position: absolute;
+     right: 35px;
+     bottom: 60px;
+     font-size: 24px;
+     font-weight: normal;
+}
+
+.title_text {
+     display: none;
+     /* display: inline-block; */
+     position: absolute;
+     top: 50px;
+     right: 15px;
+     background-color: #fff;
+     border: #000 solid 2px;
+     padding: 40px 10px;
+}
+
+.title_text strong {
+     display: block;
+     text-align: center;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 25px;
+     font-weight: normal;
+}
+
+.title_text span {
+     display: block;
+     text-align: center;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 30px;
+     font-weight: normal;
+}
+
+.title_text p {
+     display: block;
+     text-align: center;
+     font-family: "Noto Sans KR";
+     font-size: 15px;
+     font-weight: normal;
+     margin-top: 10px;
+}
+
+.logo {
+     width: 150px;
+     height: 135px;
+}
+
+.title_btns {
+     display: none;
+     position: absolute;
+     right: 0px;
+     bottom: 10px;
+}
+
+.title_btns button {
+     cursor: pointer;
+     display: block;
+     padding: 0;
+     line-height: 50px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 10px 20px 10px 0;
+     width: 150px;
+     height: 50px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 25px;
+     text-align: center;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+}
+
+.title_btns button:hover {
+     background-color: orangered;
+}
+
+/*  플레이 화면  */
+.game_play {
+     display: none;
+     width: 100%;
+     height: 100%;
+     background-color: #B475D0;
+}
+
+/*  만두속  */
+.play_filling {
+     display: flex;
+     flex-direction: column;
+}
+
+.filling_img {
+     height: 380px;
+     background-color: #FFAA40;
+     position: relative;
+}
+
+.filling_dish,
+.filling_img div {
+     position: absolute;
+     width: 480px;
+     height: 320px;
+}
+
+.play_btn {
+     display: flex;
+     justify-content: space-around;
+     padding: 10px 0 10px 0;
+}
+
+.play_btn button {
+     cursor: pointer;
+     display: block;
+     padding: 0;
+     line-height: 40px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 5px;
+     width: 40px;
+     height: 40px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 25px;
+     text-align: center;
+     color: #BF3030;
+     border-style: none;
+     background: #94e62a;
+     outline: solid 5px #0F5C31;
+}
+
+.play_btn button:hover {
+     color: #922525;
+     background: #73b320;
+     outline: solid 5px #09361c;
+}
+
+.play_btn .filling_prev {
+     cursor: auto;
+     opacity: 0;
+}
+
+.filling_btns {
+     background-color: #8C4DA9;
+     padding: 10px 10px;
+     height: 270px;
+     flex-wrap: wrap;
+     display: flex;
+}
+
+.filling_btns input[type="checkbox"] {
+     display: none;
+}
+
+.filling_btns input[type="checkbox"]+label {
+     cursor: pointer;
+     display: block;
+     line-height: 35px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 5px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 20px;
+     text-align: center;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+     flex: 1 1 30%;
+}
+
+.filling_btns input[type="checkbox"]+label:hover {
+     background-color: orangered;
+}
+
+.filling_btns input[type="checkbox"]:checked+label {
+     color: #FFF;
+     background-color: orangered;
+}
+
+/*  만두피  */
+.play_skin {
+     width: 100%;
+     display: none;
+     flex-direction: column;
+}
+
+.skin_img {
+     height: 380px;
+     background-color: seagreen;
+     position: relative;
+}
+
+.skin_img div {
+     position: absolute;
+     width: 480px;
+     height: 320px;
+}
+
+
+.skin_btns {
+     justify-content: space-around;
+     background-color: #8C4DA9;
+     padding: 10px 10px;
+     height: 270px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.skin_btns input[type="radio"]+label {
+     display: inline-block;
+     line-height: 100px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     width: 140px;
+     height: 100px;
+     margin: 5px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 20px;
+     text-align: center;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+     flex: 1 1 30%;
+     cursor: pointer;
+}
+
+.skin_btns input[type="radio"] {
+     display: none;
+}
+
+.skin_btns input[type="radio"]+label:hover {
+     background-color: orangered;
+}
+
+.skin_btns input[type="radio"]:checked+label {
+     color: #FFF;
+     background-color: orangered;
+}
+
+/*  만두모양  */
+.play_shape {
+     width: 100%;
+     display: none;
+     flex-direction: column;
+}
+
+.shape_img {
+     height: 380px;
+     background-color: khaki;
+     position: relative;
+}
+
+.shape_img div {
+     position: absolute;
+     width: 480px;
+     height: 320px;
+}
+
+.shape_btns {
+     justify-content: space-around;
+     background-color: #8C4DA9;
+     padding: 10px 10px;
+     height: 270px;
+     display: flex;
+}
+
+.shape_btns input[type="radio"]+label {
+     display: flexbox;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 8px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 20px;
+     text-align: center;
+     line-height: 208px;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+     flex: 1 1 30%;
+     cursor: pointer;
+}
+
+.shape_btns input[type="radio"] {
+     display: none;
+}
+
+.shape_btns input[type="radio"]+label:hover {
+     background-color: orangered;
+}
+
+.shape_btns input[type="radio"]:checked+label {
+     color: #FFF;
+     background-color: orangered;
+}
+
+/*  조리방법  */
+.play_cook {
+     width: 100%;
+     display: none;
+     flex-direction: column;
+}
+
+.cook_img {
+     height: 380px;
+     background-color: lightpink;
+     position: relative;
+}
+
+#cook_dish {
+     position: absolute;
+     width: 480px;
+     height: 320px;
+}
+
+#img_cook_mandu {
+     position: absolute;
+     width: 132px;
+     height: 88px;
+     top: 90px;
+     left: 180px;
+}
+
+#cook_aura {
+     position: absolute;
+     width: 76px;
+     height: 93px;
+     top: 5px;
+     left: 200px;
+}
+
+.cook_btns {
+     justify-content: space-around;
+     background-color: #8C4DA9;
+     padding: 10px 10px;
+     height: 270px;
+     display: flex;
+}
+
+.cook_btns input[type="radio"]+label {
+     display: flexbox;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 8px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 20px;
+     text-align: center;
+     line-height: 208px;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+     flex: 1 1 30%;
+     cursor: pointer;
+}
+
+.cook_btns input[type="radio"] {
+     display: none;
+}
+
+.cook_btns input[type="radio"]+label:hover {
+     background-color: orangered;
+}
+
+.cook_btns input[type="radio"]:checked+label {
+     color: #FFF;
+     background-color: orangered;
+}
+
+/*  결과 화면  */
+.game_result {
+     display: none;
+     width: 100%;
+     height: 100%;
+}
+
+.result {
+     width: 100%;
+     position: relative;
+     background-color: #B475D0;
+     background-image: url('resource/bg.png');
+}
+
+.result_wait {
+     display: none;
+     width: 480px;
+     height: 640px;
+}
+
+.result_com {
+     display: none;
+     width: 480px;
+     height: 640px;
+}
+
+.result_good {
+     height: 640px;
+}
+
+.good {
+     height: 640px;
+     width: 480px;
+     position: relative;
+     background-color: bisque;
+}
+
+.good_aura {
+     position: absolute;
+     width: 480px;
+     height: 640px;
+}
+
+.good strong {
+     display: block;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-size: 50px;
+     color: #3062bf;
+     position: absolute;
+     right: 10px;
+     top: 20px
+}
+
+.good p {
+     display: block;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-size: 40px;
+     color: rgb(255, 177, 82);
+     position: absolute;
+     right: 10px;
+     top: 70px
+}
+
+.good span {
+     display: block;
+     font-family: "Noto Sans KR", sans-serif;
+     font-weight: bolder;
+     font-size: 20px;
+     color: #4e4e4e;
+     position: absolute;
+     right: 60px;
+     top: 180px
+}
+
+.secret_1,
+.secret_2 {
+     height: 640px;
+     width: 480px;
+     position: relative;
+     background-color: bisque;
+}
+
+.secret_1 strong,
+.secret_2 strong {
+     display: block;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-size: 50px;
+     color: #bf3030;
+     position: absolute;
+     right: 10px;
+     top: 20px
+}
+
+.secret_1 p,
+.secret_2 p {
+     display: block;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-size: 40px;
+     color: #1b1b1b;
+     position: absolute;
+     right: 10px;
+     top: 70px
+}
+
+.secret_1 span,
+.secret_2 span {
+     display: block;
+     font-family: "Noto Sans KR", sans-serif;
+     font-weight: bolder;
+     font-size: 20px;
+     color: #4e4e4e;
+     position: absolute;
+     left: 20px;
+     bottom: 30px;
+}
+
+.secret_1_aura {
+     position: absolute;
+     width: 480px;
+     height: 640px;
+}
+
+.result_bad {
+     height: 640px;
+}
+
+.bad1 {
+     width: 480px;
+     height: 640px;
+     display: none;
+     position: relative;
+}
+
+.bad1 p {
+     display: block;
+     width: 150px;
+     padding: 10px 0;
+     font-family: "Black Han Sans", sans-serif;
+     font-size: 30px;
+     text-align: center;
+}
+
+.bad_talk {
+     width: 480px;
+     height: 640px;
+}
+
+#result_filling {
+     position: absolute;
+     top: 35px;
+}
+
+#result_skin {
+     position: absolute;
+     left: 20px;
+     bottom: 100px;
+}
+
+#result_cook {
+     position: absolute;
+     right: 10px;
+     bottom: 60px;
+}
+
+.bad2 {
+     display: none;
+     flex-direction: column;
+     justify-content: center;
+     position: relative;
+     width: 480px;
+     height: 640px;
+}
+
+.bad_aura {
+     position: absolute;
+     right: 120px;
+     bottom: 220px;
+     width: 92px;
+     height: 128px;
+}
+
+.jyj_ksh {
+     position: absolute;
+     left: 120px;
+     top: 250px;
+     width: 233px;
+     height: 243px;
+}
+
+.bad2 p {
+     display: block;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-size: 40px;
+     text-align: center;
+     color: #FFF;
+}
+
+.bad2 strong {
+     display: block;
+     height: 300px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 100;
+     font-size: 20px;
+     text-align: center;
+     color: #BF3030;
+     margin-bottom: 40px;
+}
+
+.result_btn {
+     display: none;
+     position: absolute;
+     right: 0px;
+     bottom: 10px;
+}
+
+.result_btn button {
+     padding: 0;
+     line-height: 50px;
+     border-radius: 30px;
+     transition: all 0.2s;
+     margin: 10px 20px 10px 0;
+     width: 150px;
+     height: 50px;
+     font-family: "Black Han Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     font-size: 25px;
+     text-align: center;
+     color: #FFF;
+     border-style: none;
+     background: #FFAA40;
+}
+
+.result_btn button:hover {
+     background-color: orangered;
+}
+
+
+/*  광고  */
+.ad {
+     display: block;
+     z-index: 1;
+}
+
+.ad_img {
+     width: 480px;
+     height: 120px;
+     background-image: url("resource/ad.png");
+}

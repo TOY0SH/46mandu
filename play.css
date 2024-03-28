@@ -1,0 +1,132 @@
+/* 만두 속 */
+.filling_dish {
+     background-image: url("resource/fill_dish.png");
+}
+
+#dubu {
+     background-image: url("resource/filling.png");
+     background-position: 1920px 320px;
+}
+
+#cabbage {
+     background-image: url("resource/filling.png");
+     background-position: 1440px 320px;
+}
+
+#ace {
+     background-image: url("resource/filling.png");
+     background-position: 480px 640px;
+}
+
+#egg {
+     background-image: url("resource/filling.png");
+     background-position: 960px 640px;
+}
+
+#cheese {
+     background-image: url("resource/filling.png");
+     background-position: 1440px 640px;
+}
+
+#meat {
+     background-image: url("resource/filling.png");
+     background-position: 1920px 640px;
+}
+
+#onion {
+     background-image: url("resource/filling.png");
+     background-position: 480px 960px;
+}
+
+#gochujang {
+     background-image: url("resource/filling.png");
+     background-position: 960px 960px;
+}
+
+#chamgileum {
+     background-image: url("resource/filling.png");
+     background-position: 1440px 960px;
+}
+
+#pepper {
+     background-image: url("resource/filling.png");
+     background-position: 1920px 960px;
+}
+
+#ketchup {
+     background-image: url("resource/filling.png");
+     background-position: 480px 1280px;
+}
+
+#garlic {
+     background-image: url("resource/filling.png");
+     background-position: 960px 1280px;
+}
+
+#daepa {
+     background-image: url("resource/filling.png");
+     background-position: 1440px 1280px;
+}
+
+#mayonnaise {
+     background-image: url("resource/filling.png");
+     background-position: 1920px 1280px;
+}
+
+/* 만두피 */
+.skin_dish {
+     background-image: url("resource/skin_dish.png");
+}
+
+#img_flour {
+     background-image: url("resource/skin.png");
+}
+
+#img_water {
+     background-image: url("resource/skin.png");
+}
+
+/* 만두 모양 */
+.shape_dish {
+     background-image: url("resource/skin_dish.png");
+}
+
+#img_mandu {
+     background-image: url("resource/shape.png");
+     background-position: 1440px 960px;
+}
+
+/* 조리 방법 */
+
+.cook_img {
+     background-image: url("resource/hi.png");
+}
+
+#cook_dish {
+     background-image: url("resource/cook.png");
+     background-position: 1440px;
+}
+
+#img_cook_mandu {
+     background-image: url("resource/cook_mandu.png");
+     background-position: 396px 264px;
+}
+
+#cook_aura {
+     background-image: url("resource/cook_aura.png");
+     animation: move_cook_aura 1s infinite;
+}
+
+@keyframes move_cook_aura {
+     0% {
+          top: 5px;
+     }
+
+     50% {
+          top: 8px;
+     }
+
+     100% {
+          top: 5px;
+     }
+}
